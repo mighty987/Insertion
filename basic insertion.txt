@@ -1,0 +1,44 @@
+
+#include<stdio.h>
+
+void dis(int arr[],int n)            
+{
+   for(int i=0;i<n;i++)
+   {   
+       
+       printf(" %d",arr[i]);
+   }
+   printf("\n");
+}
+
+void insert(int arr[],int size,int index,int element,int capacity)
+{
+    if(size>=capacity)
+    {
+        printf("Insertion is not possible");
+        
+    }
+    else
+    {
+        for(int i = size-1;i>=index;i--)
+        {
+            arr[i+1]=arr[i];
+        }
+        arr[index]=element;
+        printf("Insertion is succesfull\n");
+    }
+}
+
+int main()
+{
+    int arr[100]={1,2,3,4,5,7,8,9,10};
+    int size=9;
+    int element=6;
+    int index=5;
+    dis(arr,size);
+    insert(arr,size,index,element,100);
+    size +=1;
+    dis(arr,size);
+    return 0;
+    
+}
